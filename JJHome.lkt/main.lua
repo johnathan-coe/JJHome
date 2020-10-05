@@ -19,14 +19,6 @@ plugin.addCommand({description="Set Home", name="sethome"}, s(function(event, se
     homes:save()
 end))
 
-plugin.addCommand({description="", name="homefor"}, s(function(event, sender, name)
-    local name = event.getArgs()[1]
-    if not homes:exists(name) then return sender:sendMessage("Home Not Set!") end
-    local home = homes:getValue(name)           -- Get JsonObject from storage
-    local map = decode(home, "java.util.Map")   -- Decode json as Map
-    print(map)
-end))
-
 -- Meta
 plugin.onEnable(function() logger.info("Home Plugin Enabled!") end)
 plugin.onDisable(function() homes:save() end)
