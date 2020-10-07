@@ -5,7 +5,7 @@ local Location = import("$.Location")
 local homes = plugin.getStorageObject("homes.json")
 
 -- Commands
-plugin.addCommand({description="Go Home", name="home"}, s(function(event, sender, name)
+plugin.addCommand({description="Go Home", name="home", runAsync=false}, s(function(event, sender, name)
     if not homes:exists(name) then return sender:sendMessage("Home Not Set!") end
     local home = homes:getValue(name)           -- Get JsonObject from storage
     local map = decode(home, "java.util.Map")   -- Decode json as Map
