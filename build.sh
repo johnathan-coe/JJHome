@@ -3,26 +3,33 @@
 # Remove old compiled files
 rm -r target
 
+boldBlue="\e[1;94m"
+boldGreen="\e[1;92m"
+reset="\e[0m"
+
 # Compile moon files into target/moon
-printf "Compiling MoonScript..."
+printf "${boldBlue}Compiling MoonScript Sources...${reset}"
 time moonc src/main/moon --output-to target
-echo ""
+echo
 
 # target/moon -> target/JJHome.lkt
 mv target/moon target/JJHome.lkt
 
-echo "Copying resources into 'target'..."
+printf "${boldBlue}Copying resources into 'target'...${reset}\n"
 # Copy lua files
 cp -r src/main/lua/* target/JJHome.lkt
 
 # Copy resources (plugin.yml etc.)
 cp -r src/main/resources/* target/JJHome.lkt
 
-echo "Built target/JJHome.lkt!"
+printf "${boldGreen}Built target/JJHome.lkt!${reset}\n"
 
-echo ""
-echo "Running unit tests..."
-cp -r target/JJHome.lkt target/testing
-cp -r src/test/* target/testing
-busted -C target/testing .
-rm -r target/testing
+echo
+printf "${boldBlue}Running unit tests...${reset}\n"
+
+cp -r src/test/ target/JJHome.lkt
+busted -C target/JJHome.lkt test
+
+echo
+printf "${boldBlue}Cleaning up...${reset}\n"
+rm -r target/JJHome.lkt/test

@@ -9,17 +9,25 @@ JJHome.lkt file that you've built yourself or grabbed from the
 ## Building
 ### Requirements
 - `moonc`
-- `/bin/sh` (for now)
+- `/bin/sh` to run the build script
+- `busted` for unit testing
+
 ### Build
 ```bash
 > ./build.sh
-Compiling MoonScript...
-real    0m0.055s
-user    0m0.050s
-sys     0m0.006s
+Compiling MoonScript Sources...
+real    0m0.076s
+user    0m0.070s
+sys     0m0.007s
 
 Copying resources into 'target'...
 Built target/JJHome.lkt!
+
+Running unit tests...
+●●●●●
+5 successes / 0 failures / 0 errors / 0 pending : 0.056971 seconds
+
+Cleaning up...
 ```
 This will place a JJHome.lkt folder in the target/ directory.
 

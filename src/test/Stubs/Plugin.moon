@@ -1,5 +1,5 @@
 assert = require("luassert")
-Storage = require("Stubs.Storage")
+Storage = require("test.Stubs.Storage")
 
 -- Static variables
 storageObjects = {}

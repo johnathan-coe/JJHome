@@ -1,6 +1,6 @@
-require("lukkit_stubs")
+require("test.Stubs.globals")
 Homes = require("Homes")
-Plugin = require("Stubs.Plugin")
+Plugin = require("test.Stubs.Plugin")
 
 describe "<Homes>", ->
     before_each ->

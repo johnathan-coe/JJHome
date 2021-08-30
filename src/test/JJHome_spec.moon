@@ -1,6 +1,6 @@
-require("lukkit_stubs")
+require("test.Stubs.globals")
 JJHome = require("JJHome")
-Plugin = require("Stubs.Plugin")
+Plugin = require("test.Stubs.Plugin")
 
 Plugin.reset()
 jjHome = JJHome(Plugin)
