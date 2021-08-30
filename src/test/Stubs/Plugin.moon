@@ -1,23 +1,33 @@
--- Static variable
+assert = require("luassert")
+Storage = require("Stubs.Storage")
+
+-- Static variables
+storageObjects = {}
 commands = {}
 
 class Plugin
     addCommand: (params, func) ->
-        commands[func] = params
+        -- TODO: Check that func accepts a single arg
+        assert.False(params.name == nil, "No name for command!")
+        assert.False(func == nil, "Command callback was nil!")
+        commands[params] = func
 
-    getStorageObject: () ->
-        nil
+    getStorageObject: (file) ->
+        assert.False(string.len(file) == 0, "Storage object filename was empty!")
+        
+        if storageObjects[file] == nil
+            storageObjects[file] = Storage(file)
 
-    --
-    -- For testing
-    -- 
+        return storageObjects[file]
+
+    -- Methods below this are for testing purposes
 
     -- Get all registered commands
-    getCommands: () ->
+    getCommands: ->
         return commands
 
     -- Reset state
-    reset: () ->
+    reset: ->
         commands = {}
 
 return Plugin

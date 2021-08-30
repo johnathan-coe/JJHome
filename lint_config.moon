@@ -5,7 +5,7 @@
         "javaImport" -- main.lua
       },
       ["test/*"]: {
-        "describe", "it"
+        "describe", "it", "before_each", "setup"
       }
     }
   }
