@@ -1,7 +1,10 @@
-Location = javaImport "$.Location"
+Loc = javaImport "$.Location"
 Gson = newInstance("com.google.gson.Gson", {})
-Map = javaImport "java.util.Map"
+Map = javaImport "java.util.Map" 
 
-export fromJSON = (json) ->
-    map = Gson\fromJson(json, Map)
-    return Location\deserialize(map)
+Location =
+    fromJSON: (json) ->
+        map = Gson\fromJson(json, Map)
+        return Loc\deserialize(map)
+
+return Location

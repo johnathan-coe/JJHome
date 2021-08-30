@@ -1,4 +1,4 @@
-require "Homes"
+Homes = require "Homes"
 
 class JJHome
     new: (p) =>

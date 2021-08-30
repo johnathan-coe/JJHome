@@ -1,12 +1,12 @@
-require "Location"
+Location = require "Location"
 
-export class Homes
+class Homes
     new: (storageObject) =>
         @storageObject = storageObject
 
     getHomeFor: (name) =>
         if @storageObject\exists(name)
-            return fromJSON(@storageObject\getValue(name))
+            return Location.fromJSON(@storageObject\getValue(name))
         else
             return nil
 
@@ -19,3 +19,5 @@ export class Homes
         @storageObject\save()
 
         return success
+
+return Homes
