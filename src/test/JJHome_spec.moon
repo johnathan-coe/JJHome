@@ -5,7 +5,7 @@ Plugin = require("Stubs.Plugin")
 Plugin.reset()
 jjHome = JJHome(Plugin)
 
-describe "JJHome", ->
+describe "<JJHome>", ->
     it "Check if /home and /sethome are bound", ->
       hasHome = false
       hasSethome = false
@@ -39,7 +39,9 @@ describe "JJHome", ->
             serialize: =>
               "anon's location"
           }
-          sendMessage: (msg) => {}
+          sendMessage: (msg) => {
+            assert.are.equal("Set Home!", msg, "Unexpected message to user!")
+          }
         }
       }
 

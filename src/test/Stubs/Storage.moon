@@ -13,6 +13,7 @@ class Storage
     setValue: (key, value) =>
         @values[key] = value
         @unsaved = true
+        return true
 
     save: =>
         @unsaved = false

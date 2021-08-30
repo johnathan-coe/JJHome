@@ -29,5 +29,6 @@ class Plugin
     -- Reset state
     reset: ->
         commands = {}
+        storageObjects = {}
 
 return Plugin
