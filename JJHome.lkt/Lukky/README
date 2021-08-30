@@ -1,5 +1,0 @@
-Lukky contains a number of convenience modules to aid in the creation of Lukkit Plugins.
-Functions are added as I need them.
-
-json - Makes the com.google.gson.Gson library friendly to lua users
-command_wrappers - 'Decorators' for command functions
