@@ -3,15 +3,14 @@
 # Remove old compiled files
 rm -r target
 
-# Compile moon files in src
+# Compile moon files into target/moon
 moonc src/main/moon --output-to target
 
-# Alter dir structure
-# mv target/moon/* target
+# target/moon -> target/JJHome.lkt
 mv target/moon target/JJHome.lkt
 
-# Copy lua
+# Copy lua files
 cp -r src/main/lua/* target/JJHome.lkt
 
-# Copy resources
+# Copy resources (plugin.yml etc.)
 cp -r src/main/resources/* target/JJHome.lkt
