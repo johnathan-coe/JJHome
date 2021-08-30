@@ -1,6 +1,6 @@
 Loc = javaImport "$.Location"
 Gson = newInstance("com.google.gson.Gson", {})
-Map = javaImport "java.util.Map" 
+Map = javaImport "java.util.Map"
 
 Location =
     fromJSON: (json) ->

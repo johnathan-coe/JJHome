@@ -19,3 +19,10 @@ cp -r src/main/lua/* target/JJHome.lkt
 cp -r src/main/resources/* target/JJHome.lkt
 
 echo "Built target/JJHome.lkt!"
+
+echo ""
+echo "Running unit tests..."
+cp -r target/JJHome.lkt target/testing
+cp -r src/test/* target/testing
+busted -C target/testing .
+rm -r target/testing

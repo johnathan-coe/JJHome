@@ -26,5 +26,4 @@ class JJHome
         success = @homes\setHomeFor(sender\getName(), sender\getLocation())
         sender\sendMessage(if success then "Set Home!" else "Failed to Set Home!")
 
--- Create a new JJHome object, injecting plugin
-JJHome(plugin)
+return JJHome
