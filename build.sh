@@ -17,23 +17,25 @@ success() {
     printf "${boldGreen}${1}${reset}"
 }
 
+# Plugin name
+name="JJHome"
 
-info "Compiling MoonScript Sources (src/main/moon -> target/JJHome.lkt)"
+info "Compiling MoonScript Sources (src/main/moon -> target/${name}.lkt)"
 time moonc src/main/moon --output-to target
-mv target/moon target/JJHome.lkt
+mv target/moon target/${name}.lkt
 
-info "Copying Lua Sources (src/main/lua -> target/JJHome.lkt)\n"
-cp -r src/main/lua/* target/JJHome.lkt
-info "Copying Resources (src/main/resources -> target/JJHome.lkt)\n"
-cp -r src/main/resources/* target/JJHome.lkt
+info "Copying Lua Sources (src/main/lua -> target/${name}.lkt)\n"
+cp -r src/main/lua/* target/${name}.lkt
+info "Copying Resources (src/main/resources -> target/${name}.lkt)\n"
+cp -r src/main/resources/* target/${name}.lkt
 
-success "Built target/JJHome.lkt!\n"
+success "Built target/${name}.lkt!\n"
 
 echo
-info "Copying Unit Tests (src/test -> target/JJHome.lkt)\n"
-cp -r src/test/ target/JJHome.lkt
-busted -C target/JJHome.lkt test
+info "Copying Unit Tests (src/test -> target/${name}.lkt)\n"
+cp -r src/test/ target/${name}.lkt
+busted -C target/${name}.lkt test
 
 echo
 info "Cleaning up...\n"
-rm -r target/JJHome.lkt/test
+rm -r target/${name}.lkt/test
