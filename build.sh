@@ -3,33 +3,37 @@
 # Remove old compiled files
 rm -r target
 
+# Formatting vars
 boldBlue="\e[1;94m"
 boldGreen="\e[1;92m"
 reset="\e[0m"
 
-# Compile moon files into target/moon
-printf "${boldBlue}Compiling MoonScript Sources...${reset}"
-time moonc src/main/moon --output-to target
-echo
+# Formatting commands
+info() {
+    printf "${boldBlue}${1}${reset}"
+}
 
-# target/moon -> target/JJHome.lkt
+success() {
+    printf "${boldGreen}${1}${reset}"
+}
+
+
+info "Compiling MoonScript Sources (src/main/moon -> target/JJHome.lkt)"
+time moonc src/main/moon --output-to target
 mv target/moon target/JJHome.lkt
 
-printf "${boldBlue}Copying resources into 'target'...${reset}\n"
-# Copy lua files
+info "Copying Lua Sources (src/main/lua -> target/JJHome.lkt)\n"
 cp -r src/main/lua/* target/JJHome.lkt
-
-# Copy resources (plugin.yml etc.)
+info "Copying Resources (src/main/resources -> target/JJHome.lkt)\n"
 cp -r src/main/resources/* target/JJHome.lkt
 
-printf "${boldGreen}Built target/JJHome.lkt!${reset}\n"
+success "Built target/JJHome.lkt!\n"
 
 echo
-printf "${boldBlue}Running unit tests...${reset}\n"
-
+info "Copying Unit Tests (src/test -> target/JJHome.lkt)\n"
 cp -r src/test/ target/JJHome.lkt
 busted -C target/JJHome.lkt test
 
 echo
-printf "${boldBlue}Cleaning up...${reset}\n"
+info "Cleaning up...\n"
 rm -r target/JJHome.lkt/test
