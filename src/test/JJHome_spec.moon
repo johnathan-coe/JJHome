@@ -1,6 +1,6 @@
-require("test.Stubs.globals")
+require("muck.stubs.globals")
 JJHome = require("JJHome")
-Plugin = require("test.Stubs.Plugin")
+Plugin = require("muck.stubs.Plugin")
 
 Plugin.reset()
 jjHome = JJHome(Plugin)

@@ -10,7 +10,7 @@ JJHome.lkt file that you've built yourself or grabbed from the
 ### Requirements
 - `moonc`
 - `/bin/sh` to run the build script
-- `busted` for unit testing
+- `busted` and `muck` from LuaRocks for unit tesing
 
 ### Build
 ```bash

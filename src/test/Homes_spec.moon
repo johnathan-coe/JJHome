@@ -1,6 +1,6 @@
-require("test.Stubs.globals")
+require("muck.stubs.globals")
 Homes = require("Homes")
-Plugin = require("test.Stubs.Plugin")
+Plugin = require("muck.stubs.Plugin")
 
 describe "<Homes>", ->
     before_each ->
