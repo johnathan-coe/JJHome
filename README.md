@@ -8,13 +8,14 @@ JJHome.lkt file that you've built yourself or grabbed from the
 
 ## Building
 ### Requirements
-- `moonc`
+- `moonscript`
 - `/bin/sh` to run the build script
-- `busted` and `muck` from LuaRocks for unit tesing
+- `busted` for unit tesing
+- `muck` installed to the system tree
 
 ### Build
 ```bash
-> ./build.sh
+> muck-build
 Compiling MoonScript Sources (src/main/moon -> target/JJHome.lkt)
 real    0m0.058s
 user    0m0.046s
