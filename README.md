@@ -8,9 +8,6 @@ JJHome.lkt file that you've built yourself or grabbed from the
 
 ## Building
 ### Requirements
-- `moonscript`
-- `/bin/sh` to run the build script
-- `busted` for unit tesing
 - `muck` installed to the system tree
 
 ### Build
