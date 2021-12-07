@@ -1,5 +1,5 @@
 Loc = javaImport "$.Location"
-Gson = newInstance("com.google.gson.Gson", {})
+Gson = newInstance("com.google.gson.Gson", nil)
 Map = javaImport "java.util.Map"
 
 -- Handles deserialisation of Location objects
